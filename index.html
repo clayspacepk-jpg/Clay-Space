@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Clay Space | Handmade Clay Collectibles</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Sora:wght@400;600;700&display=swap');
+  
+  :root {
+    --cream: #FEFBF6;
+    --brown: #6F4E37; /* Rich Logo Brown */
+    --sage: #A3B18A;
+    --peach: #F4A261;
+    --red: #C1121F;
+    --black: #1A1A1A;
+  }
+  
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+  
+  body { 
+    font-family: 'Sora', sans-serif; 
+    background-color: var(--cream);
+    color: var(--black);
+    -webkit-font-smoothing: antialiased;
+  }
+  
+  .marquee {
+    background: var(--brown); 
+    color: var(--cream); 
+    padding: 10px 0;
+    font-weight: 600;
+    font-size: 14px;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+  .marquee span { display: inline-block; padding-left: 100%; animation: scroll 20s linear infinite; }
+  @keyframes scroll { 0% { transform: translate(0, 0); } 100% { transform: translate(-100%, 0); } }
+
+  nav {
+    position: sticky; top: 0; z-index: 10;
+    backdrop-filter: blur(12px);
+    background: rgba(254, 251, 246, 0.7);
+    border-bottom: 1px solid rgba(111, 78, 55, 0.1);
+    padding: 18px 40px;
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  nav h1 { 
+    font-family: 'Fredoka One', cursive; 
+    font-size: 28px; 
+    color: var(--brown); 
+    letter-spacing: 0.5px;
+  }
+  nav .email { font-weight: 600; font-size: 14px; color: var(--brown); }
+
+  .hero {
+    text-align: center;
+    padding: 80px 20px 60px;
+    max-width: 700px;
+    margin: auto;
+  }
+  .hero h2 { 
+    font-family: 'Fredoka One', cursive;
+    font-size: clamp(40px, 6vw, 64px); 
+    color: var(--brown);
+    line-height: 1.1;
+  }
+  .hero p { 
+    font-size: 18px; 
+    margin-top: 16px;
+    color: #555;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .products {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 32px;
+    padding: 40px;
+    max-width: 1200px;
+    margin: auto;
+  }
+  
+  .card {
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(10px);
+    border: 1.5px solid rgba(111, 78, 55, 0.2);
+    border-radius: 28px 12px 28px 12px; /* Signature Scallop */
+    padding: 18px;
+    transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+  }
+  .card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(111, 78, 55, 0.15);
+    border-color: var(--peach);
+  }
+  
+  .img-stack { position: relative; margin-bottom: 16px; }
+  .img-stack img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    border-radius: 20px 8px 20px 8px;
+  }
+  .img-stack img:nth-child(2) {
+    position: absolute;
+    top: 0; left: 0;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  .card:hover .img-stack img:nth-child(2) { opacity: 1; } /* Hover pe 2nd pic */
+
+  .sold-out-badge {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background: var(--red);
+    color: white;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-weight: 700;
+    font-size: 12px;
+    letter-spacing: 0.5px;
+    z-index: 2;
+  }
+  
+  .card h3 { 
+    font-family: 'Fredoka One', cursive;
+    font-size: 22px;
+    color: var(--brown);
+    margin-bottom: 4px;
+  }
+  .price { 
+    font-weight: 700; 
+    font-size: 20px; 
+    color: var(--black);
+    margin-bottom: 14px;
+  }
+  
+  .btn-disabled {
+    width: 100%;
+    background: #E5E5E5;
+    color: #888;
+    padding: 12px;
+    border-radius: 16px;
+    font-weight: 700;
+    font-size: 15px;
+    text-align: center;
+    cursor: not-allowed;
+    border: none;
+  }
+  
+  footer {
+    text-align: center;
+    padding: 60px 20px;
+    margin-top: 80px;
+    background: var(--brown);
+    color: var(--cream);
+  }
+  footer a { color: var(--peach); text-decoration: none; font-weight: 600; }
+  
+  @media(max-width: 768px) {
+    nav { padding: 18px 20px; }
+    .products { padding: 20px; gap: 20px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="marquee"><span>✨ Clay Space - Handmade in Karachi ✨ Limited Drops ✨ Join WhatsApp 0334-8495357 ✨</span></div>
+
+<nav>
+  <h1>Clay Space</h1>
+  <a href="mailto:clayspace.pk@gmail.com" class="email">clayspace.pk@gmail.com</a>
+</nav>
+
+<section class="hero">
+  <h2>Handmade Clay Friends</h2>
+  <p>Each piece is sculpted, baked, and glazed by hand. No restocks. Once it’s gone, it’s gone.</p>
+</section>
+
+<main class="products">
+
+  <div class="card">
+    <span class="sold-out-badge">SOLD OUT</span>
+    <div class="img-stack">
+      <img src="https://i.imgur.com/PLACE_STRAWBERRY_TABLE.jpg" alt="Strawberry Keychain">
+      <img src="https://i.imgur.com/PLACE_STRAWBERRY_HAND.jpg" alt="Strawberry Keychain Hand">
+    </div>
+    <h3>Strawberry Keychain</h3>
+    <p class="price">Rs. 350</p>
+    <button class="btn-disabled" disabled>Sold Out</button>
+  </div>
+
+  <div class="card">
+    <span class="sold-out-badge">SOLD OUT</span>
+    <div class="img-stack">
+      <img src="https://i.imgur.com/PLACE_BURGER.jpg" alt="Burger Keychain">
+    </div>
+    <h3>Burger Keychain</h3>
+    <p class="price">Rs. 350</p>
+    <button class="btn-disabled" disabled>Sold Out</button>
+  </div>
+
+  <div class="card">
+    <span class="sold-out-badge">SOLD OUT</span>
+    <div class="img-stack">
+      <img src="https://i.imgur.com/PLACE_PURPLE_CUP.jpg" alt="Purple Cup">
+    </div>
+    <h3>Purple Flower Cup</h3>
+    <p class="price">Rs. 300</p>
+    <button class="btn-disabled" disabled>Sold Out</button>
+  </div>
+
+  <div class="card">
+    <span class="sold-out-badge">SOLD OUT</span>
+    <div class="img-stack">
+      <img src="https://i.imgur.com/PLACE_PINK_CUP.jpg" alt="Pink Cup">
+    </div>
+    <h3>Pink Heart Cup</h3>
+    <p class="price">Rs. 300</p>
+    <button class="btn-disabled" disabled>Sold Out</button>
+  </div>
+
+  <div class="card">
+    <span class="sold-out-badge">SOLD OUT</span>
+    <div class="img-stack">
+      <img src="https://i.imgur.com/PLACE_MUSHROOM.jpg" alt="Mushroom">
+    </div>
+    <h3>Mushroom Keychain</h3>
+    <p class="price">Rs. 350</p>
+    <button class="btn-disabled" disabled>Sold Out</button>
+  </div>
+
+  <div class="card">
+    <span class="sold-out-badge">SOLD OUT</span>
+    <div class="img-stack">
+      <img src="https://i.imgur.com/PLACE_BOW.jpg" alt="Bow">
+    </div>
+    <h3>Coquette Bow</h3>
+    <p class="price">Rs. 320</p>
+    <button class="btn-disabled" disabled>Sold Out</button>
+  </div>
+
+  <div class="card">
+    <span class="sold-out-badge">SOLD OUT</span>
+    <div class="img-stack">
+      <img src="https://i.imgur.com/PLACE_ORANGE_EARRING.jpg" alt="Orange Earrings">
+    </div>
+    <h3>Orange Donut Earrings</h3>
+    <p class="price">Rs. 450</p>
+    <button class="btn-disabled" disabled>Sold Out</button>
+  </div>
+
+  <div class="card">
+    <span class="sold-out-badge">SOLD OUT</span>
+    <div class="img-stack">
+      <img src="https://i.imgur.com/PLACE_WHITE_EARRING.jpg" alt="White Earrings">
+    </div>
+    <h3>Minimal White Earrings</h3>
+    <p class="price">Rs. 450</p>
+    <button class="btn-disabled" disabled>Sold Out</button>
+  </div>
+
+</main>
+
+<footer>
+  <p><a href="https://wa.me/923348495357" target="_blank">WhatsApp: 0334-8495357</a> | <a href="mailto:clayspace.pk@gmail.com">clayspace.pk@gmail.com</a></p>
+  <p style="margin-top:12px; font-size:14px; opacity:0.8;">© 2026 Clay Space. All pieces handmade in PK.</p>
+</footer>
+
+</body>
+</html>
