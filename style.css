@@ -31,3 +31,11 @@ nav{
 }
 .logo-wrap{display:flex; align-items:center;}
 .logo{height:48px; width:auto
+.filter-btn{
+  padding:10px 20px; margin:6px; border:2px solid var(--terracotta);
+  background:#fff; color:var(--terracotta); border-radius:50px;
+  font-family:Sora; font-weight:600; cursor:pointer; transition:0.2s;
+}
+.filter-btn.active, .filter-btn:hover{
+  background:var(--terracotta); color:#fff;
+}
