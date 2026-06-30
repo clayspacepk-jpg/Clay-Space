@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Clay Space | Contact Us</title>
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital@0;1&family=Sora:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <nav>
+    <a href="index.html" class="logo-wrap">
+      <img src="logo.png" alt="Clay Space Logo" class="logo">
+    </a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="products.html">Products</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <a class="email" href="mailto:clayspace.pk@gmail.com">clayspace.pk@gmail.com</a>
+  </nav>
+
+  <header style="padding: 60px 24px;">
+    <h2>Get In Touch</h2>
+    <p>Custom order chahiye ya stock ka puchna hai? Message karo.</p>
+  </header>
+
+  <main style="max-width:600px; margin:0 auto; padding:0 24px 60px;">
+    <form action="https://formspree.io/f/xnjkbrnb" method="POST" class="contact-form">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <textarea name="message" rows="5" placeholder="Your Message..." required></textarea>
+      <button type="submit" class="btn-primary" style="width:100%; border:none; cursor:pointer;">Send Message</button>
+    </form>
+
+    <div style="text-align:center; margin-top:40px; padding:24px; background:#fff; border-radius:20px;">
+      <h3 style="font-family:Playfair Display; color:var(--terracotta); margin-bottom:12px;">Direct Contact</h3>
+      <a href="https://wa.me/923348495357" target="_blank" class="btn-primary" style="background:#25D366; margin:8px;">WhatsApp Us</a>
+      <a href="mailto:clayspace.pk@gmail.com" class="btn-primary" style="background:var(--dark); margin:8px;">Email Us</a>
+    </div>
+  </main>
+
+  <footer>
+    <img src="logo.png" alt="Clay Space Logo" class="logo-footer">
+    <p>© 2026 Clay Space</p>
+  </footer>
+
+  <style>
+    .contact-form input, .contact-form textarea{
+      width:100%; padding:14px 16px; margin-bottom:16px;
+      border:2px solid var(--taupe); border-radius:12px;
+      font-family:Sora; font-size:16px; background:#fff;
+    }
+    .contact-form input:focus, .contact-form textarea:focus{
+      outline:none; border-color:var(--terracotta);
+    }
+  </style>
+</body>
+</html>
