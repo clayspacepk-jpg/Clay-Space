@@ -1,41 +1,32 @@
-:root{
-  --terracotta: #A0522D;  /* Logo Brown */
-  --beige: #F5EFE6;       /* Logo Background */
-  --taupe: #D8BFAE;       /* Light S */
-  --dark: #4A3426;
-  --white: #ffffff;
-}
+<script>
+// 1. Filter Logic
+const filterBtns = document.querySelectorAll('.filter-btn');
+const products = document.querySelectorAll('.product-card');
 
-*{box-sizing:border-box;margin:0;padding:0}
-body{
-  font-family: 'Sora', system-ui, -apple-system, sans-serif;
-  background: var(--beige);
-  color: var(--dark);
-  line-height: 1.6;
-}
+filterBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    filterBtns.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    
+    const filter = btn.dataset.filter;
+    products.forEach(p => {
+      p.style.display = (filter === 'all' || p.dataset.category === filter) ? 'block' : 'none';
+    });
+  });
+});
 
-/* MARQUEE */
-.marquee{overflow:hidden;background:var(--terracotta);color:var(--white);font-weight:600;font-size:14px;letter-spacing:0.5px;padding:10px 0;white-space:nowrap}
-.marquee span{display:inline-block;padding-left:100%;animation:scroll 20s linear infinite}
-@keyframes scroll{0%{transform:translateX(0)}100%{transform:translateX(-100%)}}
+// 2. Lightbox Popup Logic  
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.getElementById('lightbox-img');
 
-/* NAV */
-nav{
-  background: var(--white);
-  padding: 16px 24px;
-  display:flex; 
-  align-items:center; 
-  justify-content:space-between;
-  box-shadow:0 2px 20px rgba(160,82,45,0.1);
-  position: sticky; top:0; z-index:10;
-}
-.logo-wrap{display:flex; align-items:center;}
-.logo{height:48px; width:auto
-.filter-btn{
-  padding:10px 20px; margin:6px; border:2px solid var(--terracotta);
-  background:#fff; color:var(--terracotta); border-radius:50px;
-  font-family:Sora; font-weight:600; cursor:pointer; transition:0.2s;
-}
-.filter-btn.active, .filter-btn:hover{
-  background:var(--terracotta); color:#fff;
-}
+products.forEach(p => {
+  p.addEventListener('click', () => {
+    lightboxImg.src = p.querySelector('img').src;
+    lightbox.style.display = 'flex';
+  });
+});
+
+lightbox.addEventListener('click', () => {
+  lightbox.style.display = 'none';
+});
+</script>
